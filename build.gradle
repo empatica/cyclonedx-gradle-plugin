@@ -51,7 +51,7 @@ pluginBundle {
 gradlePlugin {
     plugins {
         cycloneDxPlugin {
-            id = 'org.cyclonedx.bom'
+            id = 'org.cyclonedx.bom.plugin'
             implementationClass = 'org.cyclonedx.gradle.CycloneDxPlugin'
         }
     }
