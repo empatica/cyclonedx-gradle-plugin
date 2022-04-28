@@ -88,6 +88,7 @@ public class CycloneDxTask extends DefaultTask {
     private boolean includeBomSerialNumber;
     private boolean skip;
     private String projectType;
+    private CycloneDxConfig config;
     private final List<String> includeConfigs = new ArrayList<>();
     private final List<String> skipConfigs = new ArrayList<>();
     private final Map<File, List<Hash>> artifactHashes = Collections.synchronizedMap(new HashMap<>());
@@ -115,6 +116,10 @@ public class CycloneDxTask extends DefaultTask {
 
     public void setBuildDir(File buildDir) {
         this.buildDir = buildDir;
+    }
+
+    public void setConfig(CycloneDxConfig config) {
+        this.config = config;
     }
 
     private void initialize() {
