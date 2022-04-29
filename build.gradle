@@ -8,18 +8,17 @@ plugins {
 }
 
 repositories {
-    jcenter()
     mavenCentral()
 }
 
 dependencies {
-    compile(group: 'org.cyclonedx', name: 'cyclonedx-core-java', version: '5.0.4') {
+    implementation(group: 'org.cyclonedx', name: 'cyclonedx-core-java', version: '5.0.4') {
         // gradle-api already includes an slf4j binding
         exclude group: 'org.apache.logging.log4j', module: 'log4j-slf4j-impl'
     }
-    compile 'commons-codec:commons-codec:1.15'
-    compile 'commons-io:commons-io:2.8.0'
-    compile 'org.apache.maven:maven-core:3.5.0'
+    implementation 'commons-codec:commons-codec:1.15'
+    implementation 'commons-io:commons-io:2.8.0'
+    implementation 'org.apache.maven:maven-core:3.5.0'
 
     testImplementation gradleTestKit()
     testImplementation("org.spockframework:spock-core:1.1-groovy-2.4") {
@@ -28,7 +27,7 @@ dependencies {
 }
 
 group = 'org.cyclonedx'
-version = '1.5.1'
+version = '1.5.1-empatica01'
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
@@ -52,7 +51,7 @@ pluginBundle {
 gradlePlugin {
     plugins {
         cycloneDxPlugin {
-            id = 'org.cyclonedx.bom'
+            id = 'org.cyclonedx.bom.plugin'
             implementationClass = 'org.cyclonedx.gradle.CycloneDxPlugin'
         }
     }
